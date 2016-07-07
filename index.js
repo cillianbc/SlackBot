@@ -22,7 +22,7 @@ bot.startRTM(function(error, whichBot, payload) {
   if (error) {
     throw new Error('Could not connect to Slack');
    }
- });
+});
 var bots = [];
 var humans =[];
 bot.api.users.list({},function(err,response) {
@@ -36,11 +36,11 @@ bot.api.users.list({},function(err,response) {
 })
 controller.hears(['robot'], ['ambient'], function(whichBot, message) {
   whichBot.reply(message, bots.toString());
-  })
+})
 
 controller.hears(['human'], ['ambient'], function(whichBot, message) {
   whichBot.reply(message, humans.toString());
-  })
+})
 controller.hears(['what'], ['ambient'], function(whichBot, message) {
   whichBot.reply(message,'http://memesvault.com/wp-content/uploads/Okay-Meme-Lil-Jon-11.jpg');
-  })
+})
